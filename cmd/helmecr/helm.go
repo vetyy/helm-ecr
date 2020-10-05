@@ -46,7 +46,15 @@ func IsHelm3() (bool, error) {
 		return false, fmt.Errorf("TILLER_HOST found")
 	}
 
-	cmd := exec.Command("helm", "version", "--short", "--client")
+	path, err := exec.LookPath("helm")
+	if err != nil {
+		path, err = exec.LookPath("helm3")
+		if err != nil {
+			return false, fmt.Errorf("executable 'helm' or 'helm3' was not found in $PATH")
+		}
+	}
+
+	cmd := exec.Command(path, "version", "--short", "--client")
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		return false, fmt.Errorf("failed to execute 'helm' command: %v", err)

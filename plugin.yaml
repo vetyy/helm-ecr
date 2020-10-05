@@ -1,5 +1,5 @@
 name: "ecr"
-version: "v0.1.0"
+version: "v0.1.1"
 usage: "Install Helm charts hosted on Amazon ECR"
 description: |-
   Helm plugin that supports installing Charts from AWS ECR.
