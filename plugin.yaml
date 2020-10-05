@@ -1,0 +1,13 @@
+name: "ecr"
+version: "v0.1.0"
+usage: "Install Helm charts hosted on Amazon ECR"
+description: |-
+  Helm plugin that supports installing Charts from AWS ECR.
+command: "$HELM_PLUGIN_DIR/bin/helmecr"
+downloaders:
+- command: "bin/helmecr"
+  protocols:
+    - "ecr"
+hooks:
+  install: "cd $HELM_PLUGIN_DIR; ./hack/install.sh"
+  update: "cd $HELM_PLUGIN_DIR; ./hack/install.sh"

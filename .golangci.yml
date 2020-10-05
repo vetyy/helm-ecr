@@ -1,0 +1,36 @@
+run:
+  deadline: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - dupl
+    - goconst
+    - gofmt
+    - goimports
+    - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unused
+    - unparam
+    - varcheck
+
+linters-settings:
+  dupl:
+    threshold: 400
+  lll:
+    line-length: 170
+  golint:
+    min-confidence: 0.85
