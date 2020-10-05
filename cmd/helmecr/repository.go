@@ -22,6 +22,10 @@ func (r *Repository) FullName() string {
 	return fmt.Sprintf("%s%s", *r.Namespace, *r.Name)
 }
 
+func (r *Repository) URI() string {
+	return fmt.Sprintf("ecr://%s.dkr.ecr.%s.amazonaws.com/%s/%s", *r.RegistryID, *r.Region, *r.Namespace, *r.Name)
+}
+
 func NewRepository(uri string) (repository *Repository, err error) {
 	match := RepositoryRegexp.FindStringSubmatch(uri)
 	if len(match) == 6 {

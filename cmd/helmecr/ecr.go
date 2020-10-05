@@ -55,8 +55,7 @@ func PopulateIndex(svc *ecr.ECR, repository *Repository, idx *IndexV3) error {
 					Type:       "application",
 				}
 
-				baseURL := fmt.Sprintf("ecr://%s", repositoryFullName)
-				err := idx.Add(chartMetadata, *imageTag, baseURL, *r.ImageDigest)
+				err := idx.Add(chartMetadata, *imageTag, repository.URI(), *r.ImageDigest)
 				if err != nil {
 					return fmt.Errorf("failed to add to index: %v", err)
 				}
@@ -92,6 +91,7 @@ func FetchChartAndWrite(svc *ecr.ECR, repository *Repository, dst io.Writer) err
 	}
 
 	result, err := svc.GetDownloadUrlForLayer(&ecr.GetDownloadUrlForLayerInput{
+		RegistryId:     repository.RegistryID,
 		RepositoryName: &repositoryFullName,
 		LayerDigest:    &imageManifest.Layers[0].Digest,
 	})
