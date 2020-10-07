@@ -6,7 +6,7 @@
 Helm plugin that allows installing Helm charts from [Amazon ECR](https://aws.amazon.com/ecr/) stored as OCI Artifacts.
 
 > :warning: **Notice**
-> This is not a official plugin and does not use Helm's new experimental API.
+> This is not an official plugin and does not use Helm's new experimental API.
 > Main motivation for this plugin was to be able to install charts stored in ECR using existing tools
 > like [Flux Helm Operator](https://github.com/fluxcd/helm-operator) until better options are available.
 
@@ -30,15 +30,15 @@ download versioned release with prebuilt binary from [github releases](https://g
 
 ## Overview
 
-Plugin provides new made up protocol registered as `ecr://`.
+Plugin provides a new made up protocol registered as `ecr://`.
 There are no additional commands provided by the plugin and it integrates only with native Helm commands.
 
 Because ECR repository basically stores only a single chart, but multiple versions,
-we must provide chart with a name derived from repository url.
+we must provide a chart with a name derived from repository url.
 We decided to use the last part of the repository url as chart name and all attached image tags will be the chart versions.
 
 Given `ecr://aws_account_id.dkr.ecr.region.amazonaws.com/namespace/NAME`.
-The `NAME` will be the name of a chart. See usage below for more details.
+The `NAME` will be the name of the chart. See usage below for more details.
 
 ## Usage
 
@@ -60,7 +60,7 @@ Install chart:
     $ helm install my-app my-ecr/app
 
 Alternatively you can install chart without adding the Helm repo,
-but you must specify the version (image tag) as last part of the chart name.
+but you must specify the version (image tag) as the last part of the chart name.
 
     $ helm install my-app ecr://aws_project_id.dkr.ecr.region.amazonaws.com/namespace/app/0.1.0
 
