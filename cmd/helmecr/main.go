@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ecr"
 )
 
@@ -34,7 +35,7 @@ func main() {
 		log.Fatalf("failed to create AWS session: %v", err)
 	}
 
-	ecrService := ecr.New(session)
+	ecrService := ecr.New(session, aws.NewConfig().WithRegion(*repository.Region))
 
 	// Either Helm is asking to add ECR as the Helm repository or Helm index (index.yaml)
 	// either way return newly generated index by describing images matching Helm artifacts
