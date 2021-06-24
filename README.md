@@ -23,7 +23,7 @@ Install latest version:
 
 Install a specific release version:
 
-    $ helm plugin install https://github.com/vetyy/helm-ecr.git --version 0.1.3
+    $ helm plugin install https://github.com/vetyy/helm-ecr.git --version 0.1.4
 
 To use the plugin, you do not need any special dependencies. The installer will
 download versioned release with prebuilt binary from [github releases](https://github.com/vetyy/helm-ecr/releases).
