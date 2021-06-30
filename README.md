@@ -66,7 +66,8 @@ but you must specify the version (image tag) as the last part of the chart name.
 
 ## Helm Operator
 
-You can also use this plugin with Flux Helm Operator and their Kubernetes CRD `HelmRelease`.
+You can also use this plugin with [Flux Helm Operator](https://github.com/fluxcd/helm-operator/blob/master/chart/helm-operator/README.md#use-helm-downloader-plugins) and their Kubernetes CRD `HelmRelease`.
+
 
 ```yaml
 ---
