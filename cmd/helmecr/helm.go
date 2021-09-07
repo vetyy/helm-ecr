@@ -29,7 +29,7 @@ func (idx *IndexV3) Add(metadata interface{}, filename, baseURL, digest string) 
 		return fmt.Errorf("metadata is not *chart.Metadata")
 	}
 
-	idx.index.Add(md, filename, baseURL, digest)
+	idx.index.MustAdd(md, filename, baseURL, digest)
 	return nil
 }
 
