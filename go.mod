@@ -1,6 +1,6 @@
 module localhost/development/helm-ecr
 
-go 1.14
+go 1.16
 
 require (
 	github.com/Microsoft/go-winio v0.5.1 // indirect
