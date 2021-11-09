@@ -17,5 +17,6 @@ require (
 	google.golang.org/genproto v0.0.0-20211104193956-4c6863e31247 // indirect
 	google.golang.org/grpc v1.42.0 // indirect
 	helm.sh/helm/v3 v3.7.1
+	k8s.io/client-go v0.22.3 // indirect
 	sigs.k8s.io/yaml v1.2.0
 )
