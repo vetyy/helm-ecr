@@ -12,7 +12,7 @@ require (
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/moby/sys/mountinfo v0.5.0 // indirect
 	golang.org/x/net v0.0.0-20211108170745-6635138e15ea // indirect
-	golang.org/x/sys v0.0.0-20211109065445-02f5c0300f6e // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20211104193956-4c6863e31247 // indirect
 	google.golang.org/grpc v1.42.0 // indirect
